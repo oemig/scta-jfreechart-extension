@@ -2,6 +2,7 @@ package net.oemig.jfreechart.example;
 
 import net.oemig.scta.jfreechart.SctaItemLabelGenerator;
 import net.oemig.scta.jfreechart.SctaRenderer;
+import net.oemig.scta.jfreechart.SctaToolTipGenerator;
 import net.oemig.scta.jfreechart.data.SctaDataset;
 import net.oemig.scta.jfreechart.data.SctaDatasetBuilder;
 
@@ -55,7 +56,10 @@ public class SctaRendererDemo extends ApplicationFrame {
 
 		renderer.setBaseItemLabelGenerator(new SctaItemLabelGenerator());
 		renderer.setBaseItemLabelsVisible(true);
+		renderer.setBaseToolTipGenerator(new SctaToolTipGenerator());
+		
 		renderer.setSeriesVisibleInLegend(0, false);
+		renderer.setSeriesVisibleInLegend(1, false);
 
 		chart.getXYPlot().setRenderer(renderer);
 		final ChartPanel chartPanel = new ChartPanel(chart);
@@ -76,6 +80,9 @@ public class SctaRendererDemo extends ApplicationFrame {
 				addItemToSeries(traceName, "A0", 88.0, 68.0, 0.5, 2.0).
 				addItemToSeries(traceName, "A1", 44.0, 50.0, 1.0, 1.0).
 				addItemToSeries(traceName, "A2", 10.0, 11.0, 1.0, 1.0).
+				addEmptySeries("d").
+				addItemToSeries("d", "B1", 49.0, 20.0, 1.0, 1.0).
+				addItemToSeries("d", "B2", 13.0, 31.0, 1.0, 1.0).
 				build();
 //		return null;
 	}
