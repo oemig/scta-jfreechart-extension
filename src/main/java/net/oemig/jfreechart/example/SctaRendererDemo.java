@@ -62,6 +62,7 @@ public class SctaRendererDemo extends ApplicationFrame {
 		renderer.setSeriesVisibleInLegend(1, false);
 
 		chart.getXYPlot().setRenderer(renderer);
+		
 		final ChartPanel chartPanel = new ChartPanel(chart);
 		chartPanel.setPreferredSize(new java.awt.Dimension(500, 300));
 		setContentPane(chartPanel);
